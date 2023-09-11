@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- declare HTML doctype for file -->
+
+<!-- declaring language is English -> helpful for websites being visited by different countries (helps Google Translate) -->
+<html lang="en">
+  <!-- head = invisible metadata abt a webpage/file -->
+  <head>
+    <!-- charset = character set attribute -->
+      <!-- specifies character encoding -->
+      <!-- failure to state charset may results in malformed font characters (ie. black box instead of character) -->
+    <meta charset="utf-8" />
+    <!-- viewport meta tag -->
+      <!-- required for proper responsive rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <title> tag = first thing you see as google search result & title in the browser tab -->
+    <title>HTML Elements</title>
+    <meta name="description" content = "This is a description tag, this shows as text under title/link in Google result" />
+    <!-- can add keywords, helps Google better know what is on a page -->
+    <meta name="keywords" contents="HTML, CSS, tutorial" />
+    <!-- author is helpful when there are multiple authors especially -->
+    <meta name="author" contents="Nisha Ramanna"
+  </head>
+  <body>
+    <!-- should only be one h1 per page-->
+      <!-- is the title of the page -->
+      <!-- Google search weights text based on importance-->
+      <!-- there is h1-h6 -->
+    <h1 id="top">Hello, world!</h1>
+        <!-- id -> declaring an id -->
+    <h2 id="top">subheading1</h1>
+    <h3 id="top">subheading2</h1>
+    <h4 id="top">subheading3</h1>
+    <h5 id="top">subheading4</h1>
+    <h6 id="top">subheading5</h1>
+    <!-- <p> = paragraph tag -->
+        <!-- should always wrap text in some sort of tag -->
+        <!-- <em> = emphasis, italicizes text -->
+        <!-- <strong> = strong, bolds text -->
+    <p>This is a page with some basic HTML elements. I <em>love</em> my dog <strong>Butter Bean</strong>. She is the besttttt!</p>
+    <!-- most tags need to be closed -->
+        <!-- br, hr, and img are self closing -->
+    <!-- <hr /> = horizontal line across the page -->
+    <hr />
+    <!-- <br /> = breaks a line into two, like hitting enter -->
+    <p>Some text to insert <br />a break tag into.</p>
+    <!-- <ol> = ordered lists, defaults to intended 1. 2. 3. etc. -->
+        <!-- <li> = list item -->
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ol>
+    <!-- <ul> = unordered lists, defaults to intended bullet points -->
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <!-- ex. nested list -->
+    <ol>
+        <li>item 1</li>
+        <li>item 2
+            <ol>
+                <li>sub item 1</li>
+            </ol>
+        </li>
+        <li>item 3</li>
+    </ol>
+    <!-- <a> = link to external pages/websites -->
+        <!-- href = hyperlink reference -->
+        <!-- target="_blank" = means link will open up in new browser window -->
+            <!-- target="_self" = means link will open up in current browser window -->
+    <a href="https://www.google.com/search?q=butter+bean+pekingese&oq=butter+bean+pekingese&aqs=chrome..69i57j33i160l2.2101j0j7&sourceid=chrome&ie=UTF-8#ip=1" target="_blank">
+        Link to external page in new window
+    </a>
+    <br />
+        <!-- <a> defaults inline, use break to break up links to two seperate lines -->
+    <a href="https://www.google.com/search?q=butter+bean+pekingese&oq=butter+bean+pekingese&aqs=chrome..69i57j33i160l2.2101j0j7&sourceid=chrome&ie=UTF-8#ip=1" target="_self">
+        Link to external page in same window
+    </a>
+    <br />
+    <!-- can also link to other areas by ID on our page -->
+        <!-- declare which ID to jump to by stating href="#ID" -->
+    <a href="#top" target="_self">
+        Jump to top!
+    </a>
+    <br />
+    <!-- <img /> = allows us to load an image from an external website to our website -->
+    <img src="https://cdn.rescuegroups.org/4637/pictures/animals/14364/14364140/65772888.jpg?width=500" />
+    <br />
+    <!-- <img /> = also allows us to load an image from our website image directory -->
+        <!-- title = text that appears when your hover your mouse over image -->
+        <!-- alt = text that shows up if image link is broken -->
+    <img src="img/beanie.png" title="best dog in da world" alt="best dog in da world"/>
+  </body>
+</html>
+<!-- block = text takes up entire page -->
+<!-- inline = text stacks next to each other -->

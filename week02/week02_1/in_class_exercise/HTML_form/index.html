@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- creating a form using basic input types -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Elements</title>
+  </head>
+  <body>
+    <!-- <form action=> = contains a file/link to process the form once we click submit -->
+      <!-- method can be GET or POST -->
+    <form action="create-profile.js" name="user-create" target="_self" method="GET">
+      <!-- fieldset = groups a bunch of elements in the form -->
+      <fieldset>
+        <!-- legend = what shows up around our group of form fields -->
+        <legend>Simple Text Input</legend>
+        <p>This is your most basic text input. We change input types wih the "type" attribute.</p>
+        <!-- input = box which you can put something (text, integer, etc.) in -->
+          <!-- input defaults to text, should always specify using "type" -->
+          <!-- name = tells us how to grab the input -->
+          <!-- placeholder = shows in input box when input box is empty -->
+        <input type="text" name="FirstName" placeholder="FirstName"/>
+        <!-- label = labels input box -->
+          <!-- "for" in label, "name" in input, and field in database must match -->
+        <label for="LastName">Last Name</label>
+        <!-- maxlength = limits character length -->
+        <input type="text" name="LastName" maxlength="10"/>
+      </fieldset>
+      <fieldset>
+        <legend>Text Area Example</legend>
+        <label for="WhyBeanie">Why is Butter Bean the best dog in the world?</label>
+        <textarea name="WhyBeanie" cols="50" rows="5"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Different Input Types</legend>
+        <input type="text" />
+        <input type="number" min="10" max="100"/>
+        <input type="password" />
+      </fieldset>
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <!-- "checkbox" = allows the user to select more than one option/value at a time -->
+        <label for="Pet">What pets do you have?</label>
+        <input type="checkbox" name="Pet" value="Butter Bean"/> Butter Bean
+        <input type="checkbox" name="Pet" value="some other lame ass dog"/> some other lame ass dog
+        <input type="checkbox" name="Pet" value="some whack ass non-Beanie pet"/> some whack ass non-Beanie pet
+      </fieldset>
+      <fieldset>
+        <legend>Radio</legend>
+        <!-- "radio" = allows the user to select at most one option/value at a time -->
+        <label for="FavePet">What animal is your favorite?</label>
+        <input type="radio" name="FavePet" value="Butter Bean"/> Butter Bean
+        <input type="radio" name="FavePet" value="some other lame ass dog"/> some other lame ass dog
+        <input type="radio" name="FavePet" value="some whack ass non-Beanie pet"/> some whack ass non-Beanie pet
+      </fieldset>
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="BestPet">What pet is the best pet in the world?
+          <select name="BestPet">
+            <!-- "selected" = indicates which option is automatically selected -->
+            <!-- "value" = what JavaScript/Databases care about -->
+            <option value="BB" selected>Butter Bean</option>
+            <option value="Boo">some other lame ass dog</option>
+            <option value="Dumb">some whack ass non-Beanie pet</option>
+          </select>
+        </label>
+      </fieldset>
+      <input type="button" value="Submit" name="submit-profile" />
+      <!-- "disabled" = disables a button, can't click it -->
+      <input type="button" value="Submit Disabled" name="submit-disabled" disabled/>
+    </form>
+  </body>
+</html>
