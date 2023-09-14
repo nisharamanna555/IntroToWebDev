@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Semantic Markup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Starter template for using semantic HTML elements to organize our code before we begin CSS layouts next week."
+    />
+    <meta name="keywords" content="HTML, Semantic HTML, Tutorial" />
+    <meta name="author" content="NYU" />
+    <!-- initializing CSS -->
+    <style type=""text/css">
+        /* tag or element selectors */
+        h1 {
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* class selector */
+        .profile-photo {
+            border: 1px solid rgba(255, 0, 0, 0.337);
+            width: 200px;
+            height: 200px;
+        }
+
+        /* ID selector */
+        #info {
+            margin: 0 auto;
+            text-align: left;
+            background-color: rgba(100, 100, 100, 0.5);
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Here is some starter content. We will mark this up to contain a header, nav, article, section, aside, footer and more! Bonus points if you use even more semantic HTML elements in your HW this week. -->
+    <!-- We will be marking this up as our main menu -->
+    <header>
+        <h1>Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#" target="_self">Home</a></li>
+                <li><a href="#" target="_self">New Arrivals</a></li>
+                <li><a href="#" target="_self">Accessories</a></li>
+                <li><a href="#" target="_self">Clothing</a></li>
+                <li><a href="#" target="_self">Footwear</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- "<aside" = creates a side bar -->
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="#" target="_self">Boots</a></li>
+                <li><a href="#" target="_self">Sandals</a></li>
+                <li><a href="#" target="_self">Flip Flops</a></li>
+                <li><a href="#" target="_self">Flats</a></li>
+                <li><a href="#" target="_self">Heels</a></li>
+                <li><a href="#" target="_self">Sneakers</a>
+                    <ul>
+                        <li><a href="#" target="_self">Cross Trainers</a></li>
+                        <li><a href="#" target="_self">Running</a></li>
+                        <li><a href="#" target="_self">Fashion</a></li>
+                        <li><a href="#" target="_self">Slip Ons</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <!-- <figure> = individual image w/ caption (using figure and figcaption) -->
+        <figure id="info">
+            <!-- by applying class="profile-photo", you add CSS -->
+            <img src="https://placehold.co/300x200" class="profile-photo"/>
+            <figcaption>
+                <em>This is a shoe, I swear</em>
+                <br />
+                <strong>$70</strong>
+                <br />
+                <a href="#" target="_self">Shoe #1</a>
+            </figcaption>
+        </figure>
+    </main>
+    <footer>© Shoe Store 2016
+        <a href="#" target="_blank">facebook</a>
+        <a href="#" target="_blank">twitter</a>
+    </footer>
+  </body>
+</html>
