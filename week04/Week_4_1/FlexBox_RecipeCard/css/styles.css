@@ -8,11 +8,11 @@ body {
 .card {
     width: 50%;
     border-radius: 20px;
-    padding 1rem 2rem;
+    padding: 1rem 2rem;
+
     /* makes everything in the flex container stack */
         /* "img" and "recipe wrapper" in .card will stack next to each other */
     display: flex;
-
     /* these properties are default for flex */
     /* means you want to stack horizontally */
         /* column would stack vertically */
@@ -24,8 +24,10 @@ body {
     align-items: flex-start;
 
     background: #FFF;
+
+    /* gives us drop shadow around outline of recipe card */
     /* x direction, y direction, blur, spread, RGBA (last # is transparency) */
-    box-shadow: 0px, 4px, 4px, 0px, rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 img {
@@ -52,5 +54,56 @@ h3 {
     /* .5 rem (8 pixels) margin on top & bottom */
     /* 0 pixel margin on left & right */
     margin: 0.5 rem 0;
+    font-size: 1.5rem;
     color: #48B2FF;
+}
+
+.recipe_details {
+    /* horizontally stack "Ingredients" and "Instructions" */
+    display: flex;
+    justify-content: space-between;
+    /* allow it to align w/ above heading h3 */
+    margin-left: 1.5rem;
+}
+
+.ingredients_list {
+    /* ingredients_list will take up 40% of recipe_details */
+    width: 40%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol {
+    /* flush #s in instruction list w/ header "Ingredients" */
+    padding-left: 1.25rem;
+}
+
+li {
+    /* adds a gap after each list item ends */
+        /* if you used line height, the spacing would also be between the same li that wrapped around */
+    margin-bottom: .75rem;
+}
+
+ul li {
+    display: flex;
+}
+
+ul li span {
+    /* makes span item display block*/
+        /* display block only works b/c parent (ul li) displays flex */
+        /* thus, span items will still stack */
+    display: block;
+}
+
+/* only applies to first span inside each list item */
+ul li span:first-child {
+    width: 35%;
+    margin-right: 1.5rem;
+}
+
+.instructions_list {
+    width: 55%;
 }
