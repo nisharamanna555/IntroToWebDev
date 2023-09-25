@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scal=1" />
+        <title>Layout 2: pixel based, percentage based and clear-fix class</title>
+        <style type="text/css">
+            /* by default, body gets margin of 8 pixels */
+            body {
+                margin: 0;
+            }
+            /* give HTML elements transparent blue background and minimum height so we can track our divs and semantic markup */
+            div, header, footer, section, aside, article, main {
+                min-height: 100px;
+                background-color: rgba(0, 100, 255, 0.2);
+                    /* .2 = 20% transparent */
+            }
+            main {
+                width: 960px;
+                margin: 0 auto;
+            }
+
+            /* add reusable class that adds a block of empty content w/ zero height that will clear out both sides to avoid wrapping issues */
+            /* use this class on the container/wrapper element */
+            /* find element w/ class clearfix, create and insert invisible element after it */
+            .clearfix::after {
+                display: block;
+                clear: both;
+                /* to ensure cross browser compatability (some browsers might assume ...)-> ensures we don't see this element */
+                height: 0;
+                font-size: 0;
+                content:'';
+                visibility: hidden;
+            }
+
+            /* this style gets applied to an article w/ class of col-pixels on the article's section elements */
+            article.col-pixels section {
+                /* have 960px wide main */
+                /* sections have a margin of 10 on each side  */
+                /* there are 3 sections */
+                /* 960px - (6*10px) / 3 = 300px */
+                width: 300px;
+                /* 0 margin on top and bottom, 10px margin on left and right */
+                margin: 0 10px;
+                /* stack sections to the left until there's no more space left- then we'd start wrapping */
+                float: left;
+            }
+
+            /* by default, sections display 100% -> change that using CSS */
+            article.col-fluid section {
+                /* 4 sections -> 80% of layout will be taken up by sections */
+                width: 20%;
+                /* 4 sections, each have 2.5% on each side -> 20% of layout will be taken up by margins */
+                margin: 2.5%;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header & footer aren't included in our wrapper -->
+        <header>A header element with width 100%. We will cover menus in the next example!</header>
+        <!-- should only have 1 main per page -->
+        <main>
+            <h1>Article 1: Pixel based</h1>
+            <!-- article takes classes col-pixels and clearfix -->
+            <article class="col-pixels clearfix">
+                <h3>Article with 3 verticle sections/columns</h3>
+                <section><h3>Section 1</h3></section>
+                <section><h3>Section 2</h3></section>
+                <section><h3>Section 3</h3></section>
+            </article>
+        </main>
+        <h1>Article 2: Percent based</h1>
+        <!-- fluid layout using percentages -->
+        <article class="col-fluid clearfix">
+            <h3>Article with 4 verticle sections/columns</h3>
+            <section><h3>Section 1</h3></section>
+            <section><h3>Section 2</h3></section>
+            <section><h3>Section 3</h3></section>
+            <section><h3>Section 4</h3></section>
+        </article>
+        <footer>Some footer text.</footer>
+    </body>
+</html>

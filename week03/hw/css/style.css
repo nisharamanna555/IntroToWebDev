@@ -1,0 +1,45 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+body {
+   /* give backup font of cursive */
+   font-family: sans-serif;
+}
+
+h1 {
+   font-size: 100px;
+   width: 60%;
+   height: 50%;
+}
+
+/* purple box */
+#abs {
+   background-color: rgba(128, 0, 128, 0.376);
+   width: 100%;
+   height: 50%;
+   overflow: hidden;
+   /* absolutely positioned at the top of our domain - but it's not fixed there */
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+img {
+   height: 50%;
+   width: 40%;
+   /* so image doesn't squish */
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+footer {
+   height: 50px;
+   background-color: grey;
+   /* centers text horizontally */
+   text-align: center;
+   /* centers text vertically */
+   padding: 25px 0;
+}

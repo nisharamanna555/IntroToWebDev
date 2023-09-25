@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width-device-width, initial-scale=1" />
+        <title>Positioning</title>
+        <style type="text/css">
+            /* star = everything, applies to any tag */
+            body {
+                font-family: 'Helvetica', Arial, sans-serif;
+                margin: 0;
+            }
+            ul {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: #999999;
+                font-size: 0;
+            }
+            li {
+                display: inline-block;
+                font-size: 1rem;
+            }
+            li a {
+                display: block;
+                text-align: center;
+                width: 100px;
+                padding: 10px;
+                text-decoration: none;
+                color: #333;
+            }
+            li a.active {
+                background-color: #888;
+            }
+            li a:hover {
+                background-color: #111;
+                color: #FFF;
+            }
+            /* postitioning */
+            nav.fixed-nav {
+                /* as you scroll, nav won't move */
+                position: fixed;
+                /* want top of the nav bar to stick 0 pixels from top & left & right of the browser */
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+            /* define ID w/ # */
+            #abs {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                /* absolutely positioned at the top of our domain - but it's not fixed there */
+                position: absolute;
+                top: 0;
+                left: 50%;
+                /* z-index helps define depth/layering of stacked elements */
+                    /* positive z-index brings element to the front, negative z-index puts it in the back */
+                z-index: -100;
+            }
+            #rel {
+                background-color: green;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                /* -100px from the top of where this div would've been before */
+                top: -100px;
+            }
+
+            #rel-parent {
+                width: 500px;
+                height: 500px;
+                background-color: purple;
+
+                position: relative;
+            }
+
+            #abs-child {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+
+                position: absolute;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="fixed-nav">
+            <ul>
+                <li><a href="#" class="active">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur a odio et condimentum. Nullam malesuada, velit sit amet euismod volutpat, lorem metus finibus sem, sit amet dignissim odio nibh et ante. Suspendisse lorem lorem, dignissim vitae vulputate quis, dignissim ut nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae lectus placerat magna fringilla mollis et eu sem. Curabitur volutpat facilisis neque vitae dictum. In egestas dolor vel fermentum blandit. Nam quis odio ac tortor varius consectetur. Ut quis massa velit. Vivamus ut ex ac lectus condimentum aliquam. Aliquam id sagittis purus, eu ornare dui.
+            </p>
+            <p>
+                Donec eu condimentum dui. Aenean in nisi eget risus luctus egestas. Morbi purus magna, dapibus et magna a, efficitur rhoncus est. Etiam non porttitor mauris. Fusce tincidunt sed purus tincidunt condimentum. Nulla eget nisi accumsan, consequat leo nec, bibendum magna. Cras eget tristique elit. Integer posuere turpis non nulla ornare interdum. Integer imperdiet nisi ac neque dictum interdum.
+            </p>
+            <p>
+                Sed eu cursus nibh, ac auctor tortor. Quisque vitae neque finibus, condimentum ante ac, tristique elit. Aenean quis neque at velit volutpat viverra at vitae nibh. Cras mattis massa tortor, sit amet vehicula mauris eleifend in. Morbi volutpat commodo lorem, eu facilisis leo pellentesque non. Fusce nec feugiat magna. Fusce ullamcorper venenatis lacus ut malesuada. Duis sed tincidunt enim. Donec et mauris nec mi ornare ultricies. Maecenas eu dignissim mauris.
+            </p>
+            <p>
+                Nunc libero sem, lobortis vitae blandit ut, pellentesque ac lorem. Maecenas consequat, tortor vitae ultrices pretium, orci sapien euismod risus, ac dignissim tellus nulla ut dolor. Morbi interdum libero pulvinar, lobortis sem pellentesque, rutrum dolor. Duis tellus nulla, vulputate eget enim vel, rhoncus tempus metus. Donec eu dolor elit. Donec mattis nibh sodales ex accumsan, a tincidunt massa dignissim. Duis aliquam sollicitudin dui rhoncus rutrum. Morbi eget enim ut sem ullamcorper porttitor. Nunc vitae leo rutrum, malesuada tortor ac, tempor nulla. Duis commodo posuere tortor id pellentesque. Aliquam ac dolor sodales orci blandit sodales. Nam nibh ligula, tempus eu ipsum at, lacinia interdum sapien. Donec egestas mi sit amet sapien luctus, vel feugiat nunc blandit. Nunc laoreet urna eu metus aliquet, non rhoncus tellus eleifend. Curabitur nulla purus, vulputate in nisl in, consectetur efficitur nibh.
+            </p>
+            <p>
+                Etiam et dolor eget massa pulvinar dignissim at a purus. Mauris lacus nisi, congue in bibendum et, viverra non massa. Pellentesque ultricies ligula vel pharetra lacinia. Fusce ornare tellus et lectus dictum aliquam. Suspendisse potenti. Quisque vehicula arcu sit amet diam sodales, dignissim venenatis leo ultricies. Etiam facilisis mattis suscipit. Integer sed feugiat dolor. Sed id felis massa. Cras nibh eros, iaculis vitae tellus sit amet, dignissim sollicitudin est. Quisque dictum efficitur eros rutrum cursus. Sed interdum pulvinar cursus. Donec tortor elit, placerat sed leo at, luctus tincidunt nisi. Donec porttitor orci vel lorem scelerisque, vitae venenatis ipsum vehicula.
+            </p>
+        </main>
+        <div id="abs">
+            Absolute positioning div with no parent positioning defined!
+        </div>
+        <div id="rel">
+            Relative positioning div with no parent positioning defined!
+        </div>
+
+        <div id="rel-parent">
+            <div id="abs-child"></div>
+        </div>
+        <!-- more -->
+    </body>
+</html>

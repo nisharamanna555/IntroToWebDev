@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Kaushan+Script&display=swap');
+
+/* using Jua for headings- rest of fonts are Open Sans */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+    width: 50%;
+    border-radius: 20px;
+    padding 1rem 2rem;
+    /* makes everything in the flex container stack */
+        /* "img" and "recipe wrapper" in .card will stack next to each other */
+    display: flex;
+
+    /* these properties are default for flex */
+    /* means you want to stack horizontally */
+        /* column would stack vertically */
+        /* row-reverse would stack backwards */
+    flex-direction: row;
+    /* all items will stack towards the start (as close as they can) */
+    justify-content: flex-start;
+    /* how you're going to align individual items */
+    align-items: flex-start;
+
+    background: #FFF;
+    /* x direction, y direction, blur, spread, RGBA (last # is transparency) */
+    box-shadow: 0px, 4px, 4px, 0px, rgba(0, 0, 0, 0.25);
+}
+
+img {
+    width: 30%;
+    height: auto;
+}
+
+.recipe_info {
+    margin-left: 1.5rem;
+}
+
+h2, h3 {
+    font-family: 'Jua', sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    border-bottom: .25rem solid #48B2FF;
+}
+
+h3 {
+    /* .5 rem (8 pixels) margin on top & bottom */
+    /* 0 pixel margin on left & right */
+    margin: 0.5 rem 0;
+    color: #48B2FF;
+}

@@ -1,0 +1,52 @@
+/* import google font */
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ html {
+    background-color: black;
+    /* no repeat = image won't repeat in the background */
+    /* center center = image centered in X & Y */
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    /* image covers the whole background */
+    background-size: cover;
+ }
+
+ body {
+    /* give backup font of cursive */
+    font-family: 'Kaushan Script', cursive;
+ }
+
+ .container {
+    width: 900px;
+    margin: 0 auto;
+ }
+
+ .polaroid {
+    width: 240px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+ }
+
+ .polaroid img {
+    /* take up as much space as it can inside parent div (.polaroid, 240px) */
+    width: 100%;
+    /* preserve pixel aspect ratio */
+    height: auto;
+    border: 10px solid cornsilk;
+    border-bottom-width: 40px;
+ }
+
+ /* applies to p tags within the polaroid class */
+ .polaroid p {
+    position: absolute;
+    text-align: center;
+    width: 240px;
+    bottom: 14px;
+    color: #888;
+ }

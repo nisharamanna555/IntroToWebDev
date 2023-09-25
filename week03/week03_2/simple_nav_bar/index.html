@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width-device-width, initial-scale=1" />
+        <title>Simple Navbar</title>
+        <style type="text/css">
+            /* star = everything, applies to any tag */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                /* listing backups after Helvetica in case someones device doesn't have Helvetica */
+                font-family: 'Helvetica', Arial, sans-serif;
+            }
+
+            ul {
+                /* remove all bullet points */
+                list-style-type: none;
+                /* clips any texts/image larger than the defined height/width of the ul */
+                overflow: hidden;
+                background-color: #999999;
+                /* make parent elements (UL) font size 0 b/c we're using an inline block to stack our LI */
+                    /* inline block = stacks each element like a letter in a word or paragraph */
+                    /* making parent elements' font size 0 ensure no funk extra margins */
+                font-size: 0;
+            }
+
+            li {
+                display: inline-block;
+                /* 1 rem = 16 pixels */
+                font-size: 1rem;
+            }
+
+            li a {
+                /* make the link's clickable are larger than the actual text */
+                display: block;
+                text-align: center;
+                width: 100px;
+                padding: 10px;
+                /* remove underline on the link text */
+                text-decoration: none;
+                /* change link color */
+                color: #333;
+            }
+
+            li a.active {
+                background-color: #888;
+            }
+
+            /* applies to links when we hover over them */
+            li a:hover {
+                background-color: #111;
+                color: #FFF;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- nav bar is always an unordered list full of list items w/ links -->
+        <nav>
+            <ul>
+                <!-- active = your currently on this page -->
+                <li><a href="#" class="active">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav> 
+    </body>
+</html>
