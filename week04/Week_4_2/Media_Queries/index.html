@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!-- ensures proper responsive behavior -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Media Queries & flexbox</title>
+        <style type="text/css">
+            body {
+                /* get rid of margins & padding */
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+                background-color: red;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            /* apply default styles for desktop first */
+                /* then override for smaller screens */
+            header.header-flex {
+                /* stacks the children in the header class (h1 & nav) */
+                display: flex;
+                /* stacks everything in a row */
+                flex-direction: row;
+                /* spaces items evenly, first item pulls all the way to the left, last pulls all the way to the right */
+                justify-content: space-between;
+                /* centers items in header both horizontally and vertically as long as its parent is a flex (it is!) */
+                align-items: center;
+            }
+            h1 {
+                margin: 0;
+            }
+            nav.main-nav ul {
+                list-style-type: none;
+                display: flex;
+                padding: 0;
+            }
+            .main-nav li {
+                text-align: center;
+            }
+            .main-nav a {
+                display: block;
+                width: 3rem;
+                padding: 2rem;
+            }
+            .flex-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 2rem;
+            }
+            .space-between {
+                justify-content: space-between;
+                background-color: rgba(0, 255, 255, .5);
+            }
+            .space-around {
+                justify-content: space-around;
+                background-color: rgba(0, 155, 255, .5);
+            }
+            .thumb {
+                height: 10rem;
+                /* 4 thumbnails per desktop */
+                    /* 23% instead of 25% so there's space between */
+                width: 23%;
+                background-color: blue;
+                border: 1px solid red;
+            }
+            /* tablet screen size */
+            @media only screen and (min-width: 768px) and (max-width: 1024) {
+                body {
+                    background-color: green;
+                }
+                .flex-container {
+                    max-width: 1024px;
+                    flex-wrap: wrap;
+                }
+                /* make thumbnails stack 2 wide on tablet */
+                .thumb {
+                    width: 48%;
+                    margin: 1% 0;
+                }
+            }
+            /* mobile screen size */
+            @media only screen and(max-width:767px) {
+                body {
+                    background-color: yellow;
+                }
+                .flex-container {
+                    /* have to define a width so the items are constrained */
+                    width: 100%;
+                    padding: 0;
+                    flex-direction: column;
+                }
+                .thumb {
+                    width: 90%;
+                    margin: 2rem 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header-flex">
+            <!-- logo on left of screen -->
+            <h1 class="logo">Logo</h1>
+            <!-- nav on right of screen -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- flex container w/ justify content space between (4 wide on desktop, 2 on tablet, 1 on mobile) -->
+        <div class="flex-container space-between">
+            <div class="thumb">
+                <img src="https://placeholder.co/600x400" alt="placeholder image"/>
+            </div>
+            <div class="thumb">
+                <img src="https://placeholder.co/600x400" alt="placeholder image"/>
+            </div>
+            <div class="thumb">
+                <img src="https://placeholder.co/600x400" alt="placeholder image"/>
+            </div>
+            <div class="thumb">
+                <img src="https://placeholder.co/600x400" alt="placeholder image"/>
+            </div>
+        </div>
+        <!-- flex container w/ justify content space around (4 wide on desktop, 2 on tablet, 1 on mobile) -->
+        <div class="flex-container space-around">
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+        </div>
+    </body>
+</html>
