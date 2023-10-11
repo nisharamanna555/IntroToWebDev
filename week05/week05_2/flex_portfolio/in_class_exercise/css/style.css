@@ -1,0 +1,166 @@
+/* Global Styles */
+* {
+    /* accounting for border/padding in set dimensions of div, article, box, etc. */
+    box-sizing: border-box;
+}
+
+/* zero out page's margin */
+html, body {
+    margin: 0;
+}
+
+/* scale images to fit their parent container */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop First Styling */
+div.hero {
+    /* width: 100% -> 100% as wide as parent container */
+        /* this says its as wide as the width of the browser window */
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    /* only have a bottom margin to ensure there's space below each image */
+    margin-bottom: 2rem;
+}
+
+.hero article {
+    /* we want the article on top of our image, not below it */
+    position: absolute;
+    /* up 10% from the bottom of the relative parent */
+    bottom: 10%;
+    /* align it all the way to the right */
+    right: 0;
+    width: 50%;
+    padding: 2%;
+    /* start at 0% of div, end at 100% of div */
+    background: linear-gradient(to right, rgba(255,0,0,.5) 0%, rgba(255,0,0,.2) 100%)
+}
+
+button, a.info {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* no underline */
+    text-decoration: none;
+}
+
+button:hover, a.info:hover {
+    /* change stuff here on hover */
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    position: relative;
+    /* width: 30%; */
+    /* won't grow/shrink if you change window size */
+    flex-grow: 0;
+    flex-shrink: 0;
+    /* flex-basis = width before item can grow/shrink */
+    flex-basis: 30%;
+        /* grow, shrink, basis - equialent to above 3 lines */
+        /* flex: 0 0 30%; */
+    overflow: hidden;
+    margin: 24px auto;
+}
+
+.thumb img {
+    /* necessary to animate when we hover */
+        /* just scaling it by 1 so will be its original size at start state */
+    transform: scale(1);
+    transform: rotate(0);
+    /* all transitions will happen at the same time in 1 second */
+    transition: all 1s ease;
+}
+
+.thumb:hover img {
+    transform: scale(1.5)rotate(-20deg);
+}
+
+/* text that shows up on image on hover */
+.mask {
+    position: absolute;
+    /* makes text cover the entire div, stretches to fit */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* can't see text initially */
+    opacity: 0;
+    background-color: rgba(255, 255, 255, .5); /* heh */
+    transition: all 1s ease-in-out;
+}
+
+.mask h2 {
+    margin: 0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+/*  */
+.thumb:hover .mask {
+    opacity: 1;
+}
+
+.thumb .mask h2, .thumb .mask p, .thumb .mask a {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.thumb:hover .mask h2, .thumb:hover .mask p, .thumb:hover .mask a {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* MEDIA QUERIES */
+/* Smaller than ipad classic in portrait so we will assume mobile  */
+@media only screen and (max-width:767px){
+    .container {
+        flex-direction: column;
+        padding: 12px;
+    }
+    .hero article {
+        width: 100%;
+        padding: 25px;
+        bottom: 0;
+    }
+}
+/* tablet size */
+@media screen and (min-width: 768px) and (max-width:1024px){
+    .hero article {
+        width: 75%;
+    }
+    .thumb {
+        /* have 2 images in a row instead of 3 */
+        flex-basis: 45%; 
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1024px){
+
+}
+
+
+
+

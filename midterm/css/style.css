@@ -1,0 +1,90 @@
+html {
+    background-color: #fff8fb;
+    padding: 0;
+    margin: 0;
+}
+
+/* NAV BAR */
+nav.fixed-nav {
+    /* as you scroll, nav won't move */
+    position: fixed;
+    /* want top of the nav bar to stick 0 pixels from top & left & right of the browser */
+    top: 0;
+    left: 0;
+    right: 0;
+}
+ul {
+    /* remove all bullet points */
+    list-style-type: none;
+    background-color: #999999;
+    /* make parent elements (UL) font size 0 b/c we're using an inline block to stack our LI */
+        /* inline block = stacks each element like a letter in a word or paragraph */
+        /* making parent elements' font size 0 ensure no funk extra margins */
+    font-size: 0;
+}
+li {
+    display: inline-block;
+    font-size: 1rem;
+        /* 1 rem = 16 pixels */
+}
+li a {
+    /* make the link's clickable are larger than the actual text */
+    display: block;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    /* remove underline on the link text */
+    text-decoration: none;
+    /* change link color */
+    color: #333;
+}
+/* FIX- edit which link is active based on where you are on the page */
+/* li a.active {
+    background-color: #888;
+} */
+/* applies to links when we hover over them */
+li a:hover {
+    background-color: #111;
+    color: #FFF;
+}
+
+/* BACKGROUND IMAGE FOR HOME PAGE */
+.background-container {
+    background-color: black;
+    /* no repeat = image won't repeat in the background */
+        /* center center = image centered in X & Y */
+    background: url('../img/bgimg.png') no-repeat center center fixed;
+    /* image covers the whole background */
+    background-size: cover;
+    /* fix the image under the nav bar */
+    /* background-attachment: fixed; */
+    margin-top: 77px;
+        /* FIX- not positioned under nav bar correctly */
+    /* set the height and width of the background to cover the entire screen */
+    width: 100vw;
+    height: 100vh;
+}
+h1 {
+    width: 40%;
+    height: 20%;
+    /* absolutely positioned relative to parent background-container */
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    /* FIX- want text to stick on top of image & scroll w/ background image */
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+}
+.about p {
+    width: 30%;
+    height: 30%;
+    text-align: center;
+}
+
+.about img {
+    width: 30%;
+    height: auto;
+}
