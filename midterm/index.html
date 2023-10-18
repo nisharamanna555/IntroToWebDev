@@ -7,32 +7,200 @@
     <meta name="description" content = "This is portfolio created by Nisha Ramanna, a student studying Computer Science at NYU." />
     <meta name="keywords" contents="HTML, CSS, portfolio, resume, CS, computer sciencec" />
     <meta name="author" contents="Nisha Ramanna" />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-    <style type="text/css">
-        /* background image for home page you see when website is opened */
-        html {
-            background-color: black;
-            /* no repeat = image won't repeat in the background */
-            /* center center = image centered in X & Y */
-            background: url('./img/homepg.png') no-repeat center center fixed;
-            /* image covers the whole background */
-            background-size: cover;
-        }
-    </style>
+    <!-- include Font Awesome CSS sheet, to access icons -->
+    <script src="https://kit.fontawesome.com/f08e9bedbb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- FIX- how can i fix this within the photo -->
-    <div class="search">
-        <p>Nisha Ramanna's Website</p>
-            <!-- FIX- animate so it looks like this is being typed -->
+    <!-- create NAV bar  -->
+    <nav class="fixed-nav">
+        <ul class="left-elem">
+            <li><a href="#Home">home</a></li>
+            <li><a href="#About">about</a></li>
+            <li><a href="#Resume">resume</a></li>
+            <li><a href="#Projects">projects</a></li>
+            <li><a href="#Activities">activities</a></li>
+            <li><a href="#Contact">contact</a></li>
+        </ul>
+        <ul class="right-elem">
+            <li><a href="https://www.linkedin.com/in/nisha-ramanna/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a></li> 
+            <li><a href="https://github.com/nisharamanna555" target="_blank"><i class="fa-brands fa-square-github fa-xl"></i></a></li>
+        </ul>
+    </nav>
+    <div class="home" id="Home">
+      <div class="rounded-box">
+        <div class="welcome-text">
+            <h1 class="intro-text">Hi, I'm Nisha!<h1>
+            <h3 class="intro-sub-text"><i>Student, Programmer, Sudoku Lover</i><h3>
+        </div>
+      </div>
     </div>
-    <div class="result">
-        <p>Welcome to my site!</p>
-            <!-- FIX- animate so it fades in after search is done being typed -->
+    <div class="about" id="About">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="rounded-box2">
+          <div class="quick-facts">
+            <p><span class="larger-text"><b>NAME: </b></span>Nisha Ramanna</p>
+            <p><span class="larger-text"><b>PRONOUNS: </b></span> She/Her/Hers</p>
+            <p><span class="larger-text"><b>SCHOOL: </b></span> New York University</p>
+            <p><span class="larger-text"><b>DEGREE: </b></span> B.S./M.S. Computer Science</p>
+            <p><span class="larger-text"><b>HOMETOWN: </b></span> Nashville, TN</p>
+          </div>
+        </div>
+        <div class="about-me">
+          <p>I'm a Computer Science student at New York University, currently pursuing an Undergraduate and Master's degree.</p>
+          <p>I'm comfortable coding in many languages, like Python, JavaScript, C/C++, and HTML/CSS. I'm familiar with frameworks such as Node.js and React.js or Python Flask. Outside of class, I conduct AI/ML research as a member of an NYU research team. I've also spent the past two summers interning as a software engineer at different companies!</p>
+          <p>While I may be a New York resident now, my hometown Nashville will always have my heart. By the way, if you want to get me talking, just ask me about my beloved dog Butter Bean! She's featured on the right :)</p>
+          </br>
+        </div>
+        <img src="./img/beanie.png" title="best dog in da world" alt="best dog in da world" class="bean"/>
+      </div>
     </div>
-    <a href="./home.html">
-        <input type="button" value="Enter Here!" name="submit-profile" />
-    </a>
+    <div class="resume" id="Resume">
+      <h2>Resume</h2>
+      <div class="work-exp-content">
+        <div class="exp">
+          <h3 class="sub-title1">Work Experience</h3>
+          <a href="./file/NishaRamannaResume.pdf" download="Nisha Ramanna Resume.pdf" target="_blank" class="download-button">DOWNLOAD RESUME</a>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Sep 2023 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Machine Learning Researcher, <i><strong>New York University</strong></i></h3>
+            <p class="job-desc">
+              Developing an ML algorithm to semantic analysis on human written text</br>
+              Creating an AI chatbot which acts as a personal assistant for university professors
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">May 2023 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Software Engineering Intern, <i><b>Humana</b></i></h3>
+            <p class="job-desc">
+              Developing an application to automatically perform security scans on open-source repositories</br>
+              Reduced time spent fixing security vulnerabilities, saving team $87,000-162,000 annually
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Mar 2023 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Head of IDBE, <i><b>NYU General Engineering</b></i></h3>
+            <p class="job-desc">
+              Create and conduct Inclusion, Diversity, Belonging and Equity (IDBE) training for department faculty and teaching assistants</br>
+              Spearheaded the creation of curriculum taught to NYU Tandon’s entire freshman class on IDBE principles
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Aug 2022 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Teaching Assistant, <i><b>NYU General Engineering</b></i></h3>
+            <p class="job-desc">
+              Guide students through the Engineering Design Process to create innovative solutions to real-world challenges</br>
+              Prepare and facilitate laboratory sessions and classes for students        
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Jul - Aug 2022</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Software Engineering Intern, <i><b>HCA Healthcare</b></i></h3>
+            <p class="job-desc">
+              Collaborated with a team of engineers to present on ethics in artificial intelligence to over 100 employees</br>
+              Gained insight into the intersection between healthcare and tech by observing product demonstrations and code reviews
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="work-exp-content">
+        <h3 class="sub-title2">Education</h3>
+        <div class="bullet">
+          <p class="job-time">May 2023 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Masters of Science, Computer Science, <i><strong>New York University</strong></i></h3>
+            <p class="job-desc">
+              Expected May 2025   |   GPA: 3.33</br>
+              Concentration in Aritificial Intelligence/Machine Learning
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Aug 2020 - Present</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">Bachelors of Science, Computer Science, <i><strong>New York University</strong></i></h3>
+            <p class="job-desc">
+              Expected May 2024 | GPA: 3.89</br>
+              Relevant Coursework: Data Structures and Algorithms, Object Oriented Programming, Computer Architecture, Introduction to Databases, Introduction to Machine Learning
+              Awards: Dean's List
+            </p>
+          </div>
+        </div>
+        <div class="bullet">
+          <p class="job-time">Aug 2016 - May 2020</p>
+          <div class="timeline">
+            <div class="circle"></div>
+          </div>
+          <div class="bullet-content">
+            <h3 class="job-title">High School Degree, <i><b>Harpeth Hall</b></i></h3>
+            <p class="job-desc">
+              Awards: National Merit Scholarship Finalist, National AP Scholar with Distinction
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="activities" id="Activities">
+      <h2>Activities</h2>
+      <div class="activities-content">
+        <div class="ACM-W">
+          <img src="./img/panel.png" title="image of Nisha hosting panel" alt="image of Nisha hosting panel" class="panel-img"/>
+          <div class="acm-content">
+            <h3>Association of Computing Machinery for Women</h3>
+            <p>
+              NYU Tandon's chapter of ACM-W is an organization dedicated to advancing women in the computing industry. We host panels, workshops, and social events with the goal of promoting gender diversity in technology fields.</br>
+              In my role as the chair of ACM-W, I have expanded our club's reach and increased membership by 40%. I fostered meaningful mentorship relationships between female students and tech professionals, aiming to pave the way for a smoother entry into industry. I have also taught several technical workshops, with the goal of empowering women to pursue a career in technology.
+            </p>
+          </div>
+        </div>
+        <div class="motorsports">
+          <div class="motor-content">
+            <h3>NYU Motorsports</h3>
+            <p>
+              NYU Motorsports is a student organization focused on designing and building both off-road vehicles and electric vehicles. The team participates in annual competitions where we push the boundaries of innovation in engineering.</br>
+              As a member of the Electronics subteam, I spearheaded the design and programming of a car dashboard which allowed for live visualization of the car's performance during competition. I also manage the team's telemetry system, using platforms like Heroku, Digital Ocean, Docker, and Grafana, to enhance the team's data analysis capabilities. As the lead of the Media subteam, I organize a team of 10+ people in managing social media accounts and performing sponsor outreach.
+            </p>
+          </div>
+          <img src="./img/motorsports.jpeg" title="image of NYU Motorsports car" alt="image of NYU Motorsports car" class="car-img"/>
+        </div>
+      </div>
+    </div>
+    <div class="footer-wrapper">
+      <footer class="footer">
+        <p>&copy; 2023 Nisha Ramanna Portfolio. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
-
 </html>

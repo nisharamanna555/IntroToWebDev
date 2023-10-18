@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Modal Windows</title>
+        <style type="text/css">
+            .infoModal {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,.3);
+                /* make sure the model pops up over all other content */
+                z-index: 9999999;
+                /* starting state of 0% opacity for our transition */
+                opacity: 0;
+                /* define a transition on the starting state */
+                transition: opacity 400ms ease-in;
+                /* whenever anyone clicks on this transparent background, you can't accidentally click on stuff behind the background */
+                    /* by disabling all mouse events */
+                pointer-events: none;
+            }
+            .infoModal:target {
+                opacity: 1;
+            }
+            /* div which is a direct child of something w/ class infoModal */
+            .infoModal > div {
+                width: 300px;
+                height: 300px;
+                /* if a child is going to be fixed absolutely, its parent must be relative */
+                position: relative;
+                margin: 10% auto;
+                padding: 2rem;
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            .close {
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                color: black;
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-align: center;
+                text-decoration: none;
+                transition: all 1s ease;
+            }
+
+            .close:hover {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#info">link to modal 1</a>
+        <a href="#info2">link to modal 2</a>
+        <!-- all IDs have to be unique- thus, style modals by class since they will all be styled the same -->
+        <div id="info" class="infoModal">
+            <div>
+                <a href="#close" title="close" class="close">X</a>
+                <h2>Title of Modal 1</h2>
+                <p>look at me! I'm the first modal</p>
+            </div>
+        </div>
+        <div id="info2" class="infoModal">
+            <div>
+                <a href="#close" title="close" class="close">X</a>
+                <h2>Title of Modal 2</h2>
+                <p>look at me! I'm the second modal</p>
+            </div>
+        </div>
+    </body>
+</html>

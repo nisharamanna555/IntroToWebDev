@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+body, html {
+    /* zero out margins, borders, & padding */
+    margin: 0;
+    border: 0;
+    padding: 0;
+    /* ensure HTML/body elements takes up 100% of viewport height */
+    height: 100%;
+    font-family: 'Space Mono', monospace;
+}
+/* background image for home page you see when website is opened */
+.background-image {
+    /* sets a background image for an element */
+    background-image: url('../img/homepg.png');
+    /* image covers the whole background */
+    background-size: cover;
+    /* image is centered */
+    background-position: center;
+    /* parent must be positioned relative for its child (the text) to be positioned absolutely */
+    position: relative;
+    /* ensure background image takes up 100% of viewport height */
+    height: 100%;
+}
+/* FIX- resizing screen moves text relative to background image */
+    /* doing position: absolute doesn't help */
+.search-text {
+    position: absolute;
+    top: 21%;
+    left: 53%;
+    /* horizontally and vertically centers an element within its parent container */
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-size: 16px;
+}
+.result-text {
+    position: absolute;
+    width: 40%;
+    top: 19%;
+    left: 58%;
+    transform: translate(-50%, 50%);
+    /* text-align: center; */
+    font-size: 60px;
+    font-family: 'Anonymous Pro', monospace;
+    color: #c36f8e;
+}
+.button-container {
+    text-align: center;
+    padding-top: 23%;
+    padding-left: 10%;
+}
+.enter-button {
+    text-decoration: none;
+    font-size: 28px;
+}

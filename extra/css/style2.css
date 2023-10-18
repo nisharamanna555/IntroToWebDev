@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Jua&family=Kaushan+Script&family=Space+Mono:wght@400;700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+body, html {
+    background-color: #fff8fb;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Space Mono', monospace;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+}
+/* FIXES:
+    - RESIZING :(
+    - alignment/padding of nav bar is off (left vs. right)
+        - removed padding, margin, aligned nav to the left- nothing works
+    - can't figure out how to align some elements of the nav to the left and some to the right
+        - tried creating seperate divs within the nav, didn't work
+        - tried creating seperate navs, one would layer over the other
+    - want background image & all divs to start under navbar
+        - ***make background image a regular image, abs position it under nav bar
+        - tried adding margin-top, didn't have desired effect
+        - height: calc(100%vh - 48px);
+    - want the "intro" text to move with the image when you scroll up when image is already at top of the screen
+    - want the "intro" text to be covered when you scroll to "about"
+    - fix spacing before Activities
+        - sticky
+    - make footer stick to bottom of page (position: sticky;)
+    LATER:
+    - want to transition from index to home w/ a zoom into the computer screen
+    - want the text on the computer screen to look like its being typed
+    - want to smooth scroll to each section instead of jumping to it via nav bar
+    - want to add an arrow which you can click to go to the next section
+    - want each "page" to take up one viewport width (fix resume)
+    - want to create slideshow of projects
+    - want to create a contact from at the bottom which directly emails me */
+
+/* NAV BAR */
+.fixed-nav {
+    background-color: #758173;
+    width: 100vw;
+    /* fix nav bar to top of page */
+    position: fixed;
+    top: 0;
+    /* nav bar will always be in front of any other items */
+    z-index: 1000;
+}
+.fixed-nav ul {
+    display: flex;
+    justify-content: space-around;
+    /* remove bullet points */
+    list-style-type: none;
+    /* make parent elements (UL) font size 0 b/c we're using an inline block to stack our LI */
+        /* inline block = stacks each element like a letter in a word or paragraph */
+        /* making parent elements' font size 0 ensure no funk extra margins */
+    font-size: 0;
+}
+.fixed-nav li {
+    font-size: 1.2vw;
+        /* FIX- design? */
+    /* 1 rem = 16 pixels */
+}
+.fixed-nav li a {
+    /* remove underlines */
+    text-decoration: none;
+    /* make the link's clickable are larger than the actual text */
+    display: block;
+    text-align: center;
+    width: 10.4vw;
+    padding: .8vw;
+    /* change link color */
+    color: white; 
+}
+.fixed-nav li a:hover {
+    background-color: #495148;
+    color: white;
+}
+
+/* BACKGROUND IMAGE FOR HOME PAGE */
+.background-img {
+    /* no repeat = image won't repeat in the background */
+        /* center center = image centered in X & Y */
+    background: url('../img/full_desktop.png') no-repeat center center fixed;
+    /* image covers the whole background */
+    background-size: cover;
+    /* fix the image under the nav bar */
+    position: relative;
+    /* border-top: 48px; DOESN'T WORK */
+    /* set the height and width of the background to cover the entire screen */
+    width: 100vw;
+    height: 100vh;
+}
+.intro-text {
+    width: 35vw;
+    height: 20%;
+    /* fix positioned relative to parent background-container */
+    position: fixed;
+    top: 32vh;
+    left: 33vw;
+    font-size: 2.4vw;
+    font-family: 'Anonymous Pro', monospace;
+    color: #2A2B2A;
+}
+.search-text {
+    position: fixed;
+    top: 10.5vh;
+    left: 48.5vw;
+    /* horizontally and vertically centers an element within its parent container */
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-size: 1.6vw;
+    color: #2A2B2A;
+}
+
+/* TITLE TEXT FOR ALL SECTIONS */
+h2 {
+    text-align: center;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 4vw;
+    margin-bottom: 1.5vh;
+    color: #9F4A54;
+}
+
+/* ABOUT SECTION */
+.about {
+    padding-top: 48px;
+    position: relative;
+    /* make this div take up an entire viewport width/height */
+    width: 100vw;
+    height: 100vh;
+}
+.bgd_files {
+    width: 100vw;
+    height: 100vh;
+}
+.about-content {
+    display: flex;
+    /* vertically center image and text within div */
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+.bean {
+    width: 40vw;
+    height: 55vh;
+    object-fit: cover;
+    object-position: center;
+    /* margin-left: 2.5vw;
+    margin-top: 3vh; */
+    /* allows bean pic to layer over bgd_files */
+    position: absolute;
+    top: 40vh;
+    left: 10vw;
+    z-index: 10;
+}
+.about p {
+    width: 35vw;
+    text-align: center;
+    margin-left: 10vw;
+    /* allows text to layer over bgd_files */
+    position: absolute;
+    top: 40vh;
+    left: 42vw;
+    z-index: 10;
+    color: #2A2B2A;
+    font-size: 1.1vw;
+}
+
+/* RESUME SECTION */
+.resume {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.vertical-text-work, .vertical-text-educ {
+    position: absolute;
+    /* set writing mode to vertical, displaying text vertically */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    /* rotate by 180 deg to get text facing right direction */
+    transform: rotate(180deg);
+    /* prevent text from wrapping */
+    white-space: nowrap;
+    color: #959f93;
+    font-size: 15vh;
+    font-family: 'Anonymous Pro', monospace;
+    left: 10vw;
+}
+.vertical-text-work {
+    top: 35vh;
+}
+.vertical-text-educ {
+    top: 200vh;
+}
+/* create timeline elements */
+.timeline {
+    position: relative;
+}
+.circle {
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    width: 4vh;
+    height: 4vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 3px solid #959f93;
+}
+.line {
+    position: absolute;
+    top: 22vh;
+    left: 32.2vw;
+    width: 5.6vw;
+    border: 2px solid #959f93;
+}
+.vert-line {
+    position: absolute;
+    top: 24.5vh;
+    left: 31vw;
+    height: 13.9vw;
+    border: 2px solid #959f93;
+}
+/* background for each bullet */
+.bullet {
+    position: relative;
+}
+/* .outline {
+    width: 55vw;
+    height: auto;
+    margin-left: 35vw;
+    margin-top: -10vh;
+} */
+.bullet_bgd {
+    position: relative;
+}
+.box {
+    position: absolute;
+    /* top: 20vh; */
+    left: 38%;
+    width: 50%;
+    height: 30%;
+    background-color: #959f93;
+    border: 2px solid #000;
+}
+.text-box {
+    position: absolute;
+    left: 40%;
+    margin-top: 3%;
+    width: 46%;
+    height: 22%;
+    background-color: white;
+    border: 2px solid #000;
+    z-index: 1;
+}
+.circle1 {
+    position: absolute;
+    left: 85%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.circle2 {
+    position: absolute;
+    left: 82.5%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.circle3 {
+    position: absolute;
+    left: 80%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.search-bar-rect {
+    position: absolute;
+    left: 40.8%;
+    margin-top: .7%;
+    width: 38%;
+    height: 3.5%;
+    background-color: white;
+    z-index: 2;
+}
+.search-bar-circle1 {
+    position: absolute;
+    left: 40%;
+    margin-top: .7%;
+    width: 3.5vh;
+    height: 3.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+}
+.search-bar-circle2 {
+    position: absolute;
+    left: 77.75%;
+    margin-top: .7%;
+    width: 3.5vh;
+    height: 3.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+}
+
+/* title of job- text */
+.job-title {
+    color: #2A2B2A;
+    width: 55vw;
+    margin-left: 42vw;
+    margin-top: -42.25vh;
+    font-size: 1.2vw;
+}
+/* description of job- text */
+.job-desc {
+    color: #2A2B2A;
+    width: 45vw;
+    margin-left: 40vw;
+    margin-top: -.5vh;
+}
+
+/* PROJECTS SECTION */
+/* .projects {
+
+} */
+
+/* CONTACT SECTION */
+/* .contact {
+
+} */
+
+/* FOOTER */
+.footer {
+    background-color: #2A2B2A;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,97 @@
+.bullet_bgd {
+    position: relative;
+}
+.box {
+    position: absolute;
+    /* top: 20vh; */
+    left: 38%;
+    width: 50%;
+    height: 30%;
+    background-color: #959f93;
+    border: 2px solid #000;
+}
+.text-box {
+    position: absolute;
+    left: 40%;
+    margin-top: 3%;
+    width: 46%;
+    height: 22%;
+    background-color: white;
+    border: 2px solid #000;
+    z-index: 1;
+}
+.circle1 {
+    position: absolute;
+    left: 85%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.circle2 {
+    position: absolute;
+    left: 82.5%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.circle3 {
+    position: absolute;
+    left: 80%;
+    margin-top: .9%;
+    width: 2.5vh;
+    height: 2.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    border: 1px solid #000;
+    z-index: 2;
+}
+.search-bar-rect {
+    position: absolute;
+    left: 40.8%;
+    margin-top: .7%;
+    width: 38%;
+    height: 3.5%;
+    background-color: white;
+    z-index: 2;
+}
+.search-bar-circle1 {
+    position: absolute;
+    left: 40%;
+    margin-top: .7%;
+    width: 3.5vh;
+    height: 3.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+}
+.search-bar-circle2 {
+    position: absolute;
+    left: 77.75%;
+    margin-top: .7%;
+    width: 3.5vh;
+    height: 3.5vh;
+    /* makes a perfect circle */
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+}
+
+/* <div class="bullet-bgd">
+<div class="box"></div>
+<div class="text-box"></div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="circle3"></div>
+<div class="search-bar-rect"></div>
+<div class="search-bar-circle1"></div>
+<div class="search-bar-circle2"></div>
+</div> */

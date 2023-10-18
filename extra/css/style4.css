@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Jua&family=Kaushan+Script&family=Space+Mono&family=VT323&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* ensure HTML/body elements takes up 100% of viewport height */
+    height: 100%;
+    background-color: #fff8fb;
+    font-family: 'Space Mono', monospace;
+}
+
+/* CREATE BACKGROUND IMAGE BY LAYERING MULTIPLE IMAGES */
+.background-images {
+    /* FIX- causing small border at bottom of screen */
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%
+}
+/* create a relative div image- serves as a base image */
+.walldecor {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+/* all other images are absolute */
+/* box which helps define shape of desk */
+.box {
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    width: 94%;
+    height: 38%;
+    background-color: #ffe6ef;
+    border: 2px solid #000;
+}
+.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+}
+.file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+}
+.file2 {
+    position: absolute;
+    top: -8%;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+}
+.trash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+}
+.tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+}
+.tab2 {
+    position: absolute;
+    top: -4.5%;
+    left: -2.5%;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+}
+.keyboard {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+}
+.mouse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+}
+.pens {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 1
+}
+.flower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+}
+/* FIX- resizing screen moves text relative to background image */
+    /* doing position: absolute doesn't help */
+.search-text {
+    position: absolute;
+    top: 22.8%;
+    left: 49.5%;
+    /* horizontally and vertically centers an element within its parent container */
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-size: 15px;
+    z-index: 3;
+}
+.result-text {
+    position: absolute;
+    width: 40%;
+    top: 20.5%;
+    left: 55.5%;
+    transform: translate(-50%, 50%);
+    /* text-align: center; */
+    font-size: 58px;
+    font-family: 'Anonymous Pro', monospace;
+    color: #c36f8e;
+    z-index: 3;
+}
+.link-container {
+    position: absolute;
+    top: 50%; /* Position the link 50% from the top of the container */
+    left: 50%; /* Position the link 50% from the left of the container */
+    transform: translate(-50%, -50%); /* Center the link horizontally and vertically */
+    z-index: 3;
+}
+
+.enter-button {
+    text-decoration: none;
+    font-size: 28px;
+}
