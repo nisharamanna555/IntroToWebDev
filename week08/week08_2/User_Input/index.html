@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Simple Inpu</title>
+    </head>
+    <body>
+        <h1 id="changeMe">I will change this based on the number the user picks</h1>
+        <form>
+            <fieldset>
+                <legend>Pick a number to change the heading</legend>
+                <label for="num">Number between 0 and 3</label>
+                <!-- set min and max values of 0 and 3 (unique to input type number)-->
+                    <!-- step=1 -> increment input by 1 when user increments number -->
+                <input type="number" name="num" id="num" min="0" max="3" step="1"/>
+            </fieldset>
+        </form>
+    </body>
+</html>
