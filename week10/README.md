@@ -1,0 +1,14 @@
+Expanding on Midterm
+- add soft scroll for menu bar using JavaScript
+- have button on "home" section which scrolls down to the "about me" page
+- update "resume" section
+    - https://swkang73.github.io/#resume
+- add project section
+    - make slideshow of projects which link to associated GitHub repo (if applicable) using BootStrap
+- add contact section
+    - use API to allow them to send emails to me
+- resizing for all screen sizes:
+    - make menu bar a hambuger menu
+    - for "About Me" section- create JavaScript button which lets you switch between paragraph and quick facts
+        - adjust text on button based on which section you're currently viewing
+- update overall color palette
