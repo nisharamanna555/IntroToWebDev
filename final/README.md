@@ -26,3 +26,7 @@ What I learned:
     More JavaScript (.mouseout vs .mouseover, animation to move the magazine letters, etc.)
     How to work with HTML tables
     Getting text to appear when I hovered
+
+Future:
+    I'm not happy with how my Resume section resizes- the popup goes over the table. However, I didn't think making the popup go ontop of the table would look nice either because you may not be able to see it based on where on the site you are. I think instead of absolutely positioning the popup I'll have to place it relative to the row being hovered over.
+    My media queries also still aren't 100% perfect, there's more I could adjust.
